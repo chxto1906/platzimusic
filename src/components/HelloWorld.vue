@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>Platzi Music</h1>
     <select v-model="selectedCountry">
-      <option v-for="country in countries" :value="country.value">
+      <option v-for="country in countries" :key="country.id" :value="country.value">
         {{ country.name }}
       </option>
     </select>
@@ -30,15 +30,18 @@ export default {
       artists: [],
       countries: [{
         name: "Argentina",
-        value: "argentina"
+        value: "argentina",
+        id: "arg001"
       },
       {
         name: "Colombia",
-        value: "colombia"
+        value: "colombia",
+        id: "col001"
       },
       {
         name: "España",
-        value: "spain"
+        value: "spain",
+        id: "esp001"
       }],
       selectedCountry: 'argentina',
       loading: false
